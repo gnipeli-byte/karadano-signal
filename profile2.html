@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARE2|からだのシグナル</title>
+    <link rel="stylesheet" href="index.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body id="top">
+    <header>
+        <div class="header__inner">
+           <a href="./index.html#top" class="logomark">
+                からだのシグナル
+                <small>KARADA NO SIGNAL</small>
+            </a>
+
+            <button class="hamburger" id="hamburger" aria-label="メニュー"><i class="fas fa-bars"></i></button>
+            <nav class="gnav" id="gnav">
+
+                <ul class="gnav__list">
+                    <li class="gnav__item">
+                        <a href="./index.html#mission" class="gnav__link">
+                            <span class="gnav__EN"><b>MISSION</b></span><br>
+                            <span class="gnav__JA">ミッション</span>
+                        </a>
+                    </li>
+                    <li class="gnav__item">
+                        <a href="./index.html#profile" class="gnav__link">
+                            <span class="gnav__EN"><b>CARE</b></span><br>
+                            <span class="gnav__JA">不調のケア</span>
+                        </a>
+                    </li>
+                    <li class="gnav__item">
+                        <a href="./index.html#video" class="gnav__link">
+                            <span class="gnav__EN"><b>VIDEO</b></span><br>
+                            <span class="gnav__JA">動画</span>
+                        </a>
+                    </li>
+                    <li class="gnav__item">
+                        <a href="./index.html#topics" class="gnav__link">
+                            <span class="gnav__EN"><b>COLUMN</b></span><br>
+                            <span class="gnav__JA">コラム</span>
+                        </a>
+                    </li>
+                    <li class="gnav__item">
+                        <a href="./index.html#news" class="gnav__link">
+                            <span class="gnav__EN"><b>NEWS</b></span><br>
+                            <span class="gnav__JA">ニュース</span>
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section class="profile-detail">
+
+                <div class="profile-detail__hero">
+                    <div class="profile-detail__inner">
+                        <div class="profile-detail__heading">
+                            <h2>CARE</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-detail__inner">
+                    <div class="profile-detail__content">
+                        <div class="profile-detail__photo">
+                            <img src="./img/care_youtsu.jpg" alt="腰を伸ばす人">
+                        </div>
+                    
+                        <div class="profile-detail__body">
+                            <h3>腰痛<span>（立ち仕事・家事に多い不調）</span></h3>
+                            <div class="profile-detail__info">
+                                <dl>
+                                    <dt><span class="arrow">▼</span>原因として考えられること</dt>
+                                    <dd>
+                                        長時間の座り仕事や立ち仕事、中腰での作業、運動不足による
+                                        体幹の筋力低下など、生活習慣に起因することが多いとされています。
+                                        冷えによって血流が悪くなることも、腰まわりの負担を増やす
+                                        一因と考えられています。
+                                    </dd>
+                                    <dt><span class="arrow">▼</span>放置すると考えられること</dt>
+                                    <dd>
+                                        腰まわりの負担が慢性的に続くと、椎間板への圧力が偏り、
+                                        椎間板ヘルニアのような形で神経を圧迫するケースにつながることが
+                                        あります。また、坐骨神経痛のように、腰から脚にかけてしびれや
+                                        痛みが広がることもあります。
+                                    </dd>
+                                    <dt><span class="arrow">▼</span>今日からできるセルフケア</dt>
+                                    <dd>
+                                        ・座るときは骨盤を立てることを意識する<br>
+                                        ・1時間に一度、軽く立ち上がって腰を伸ばす<br>
+                                        ・お腹まわり・体幹の筋肉を軽く動かす習慣をつける<br>
+                                        ・就寝時は腰に負担の少ない姿勢を心がける
+                                    </dd>
+                                </dl>
+                            </div>
+                            <p class="profile-detail__note">
+                                腰は「からだの土台」とも言われる部分です。違和感を感じたら、
+                                無理をせず早めにケアを始めることが、将来的な負担を減らすことにつながります。
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            <!-- ページナビゲーション -->
+            <nav class="page-nav__profile">
+                <div class="page-nav__list">
+                    <a class="page-nav__item page-nav__item--prev" href="profile1.html">prev</a>
+                    <a class="page-nav__item" href="profile1.html">1</a>
+                    <span class="page-nav__item page-nav__item--current">2</span>
+                </div>
+            </nav>
+            
+        </section>
+
+        <div class="toppage-wrap">
+            <a href="./index.html#top" class="toppage">
+                トップページへ戻る
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <small>Copyright (C) 2026 からだのシグナル Project.</small>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const gnav = document.getElementById('gnav');
+        hamburger.addEventListener('click', function(){
+            gnav.classList.toggle('is-open');
+            // const icon = hamburger.querySelector('i');
+            // icon.classList.toggle('fa-bars');
+            // icon.classList.toggle('fa-xmark');
+        })
+
+        const gnavLinks = gnav.querySelectorAll('a');
+        gnavLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
+                gnav.classList.remove('is-open');
+            });
+        });
+    </script>
+
+</body>
+</html>
