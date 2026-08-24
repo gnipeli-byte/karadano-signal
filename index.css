@@ -882,15 +882,16 @@ header{
 .footer__logo{
     font-family: "M PLUS Rounded 1c", "Noto Sans JP", sans-serif;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.17rem;
     color: var(--color-text);
     margin: 0;
+    letter-spacing: 0.06em;
 }
 .footer__logo-En{
     display: block;
     margin: 0 0 24px;
     font-size: 0.6rem;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.2em;
     color: var(--color-primary);
 }
 .footer__nav{
