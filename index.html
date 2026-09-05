@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>からだのシグナル｜小さな不調を放置していませんか？</title>
-    <link rel="stylesheet" href="index.css">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=M+PLUS+Rounded+1c:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=M+PLUS+Rounded+1c:wght@500;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body id="top">
@@ -33,8 +38,8 @@
                     </li>
                     <li class="gnav__item">
                         <a href="#profile" class="gnav__link">
-                            <span class="gnav__EN"><b>CARE</b></span><br>
-                            <span class="gnav__JA"><b>不調のケア</b></span>
+                            <span class="gnav__EN"><b>SYMPTOMS</b></span><br>
+                            <span class="gnav__JA"><b>症状とケア</b></span>
                         </a>
                     </li>
                     <li class="gnav__item">
@@ -66,7 +71,9 @@
             <div class="hero__split">
                 <img src="./img/hero_care.jpg" class="hero__img" alt="腰痛の女性会社員の背中">
                 <div class="hero__panel">
-                    <p class="hero__catch">小さな不調を放置していませんか？</p>
+                    <p class="hero__catch" id="hero-catch" aria-label="小さな不調を放置していませんか？">
+                        小さな不調を放置していませんか？
+                    </p>
                 </div>
             </div>
         </div>
@@ -88,12 +95,14 @@
                 </div>
 
             </div>
-            
+
             <div class="mission__lime">
 
                 <div class="mission__inner">
-                    <p class="mission__catch"><span class="marker">そこからこのプロジェクトが生まれました！</span></p>
-                    
+                    <p class="mission__catch" data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
+                        <span class="marker">そこからこのプロジェクトが生まれました！</span>
+                    </p>
+
                     <div class="mission__point">
 
                         <div class="mission__point-badge">
@@ -131,7 +140,7 @@
                 <div class="profile__heading">
 
                     <div class="profile__heading-deco">
-                        <h2>CARE</h2>
+                        <h2>SYMPTOMS</h2>
                     </div>
 
                     <p class="profile__lead">
@@ -140,33 +149,33 @@
                 </div>
                 <div class="profile__6cards">
 
-                <a href="profile1.html" class="profile__card-link">
-                    <div class="profile__card">
-                        <img src="./img/symptom_katakori.jpg" alt="肩こり" class="profile__photo">
-                        <p class="profile__name">
-                            <span class="profile__arrow">▶</span>肩こり
-                            <span class="profile__kana">（デスクワークに多い）</span>
-                        </p>
-                        <p class="profile__caption">
-                            デスクワークで動かない首や肩。放っておくと、慢性的な頭痛や
-                            四十肩につながることもあります。
-                        </p>
-                    </div>
-                </a>
+                    <a href="profile1.html" class="profile__card-link">
+                        <div class="profile__card">
+                            <img src="./img/symptom_katakori.jpg" alt="肩こり" class="profile__photo">
+                            <p class="profile__name">
+                                <span class="profile__arrow">▶</span>肩こり
+                                <span class="profile__kana">（デスクワークに多い）</span>
+                            </p>
+                            <p class="profile__caption">
+                                デスクワークで動かない首や肩。放っておくと、慢性的な頭痛や
+                                四十肩につながることもあります。
+                            </p>
+                        </div>
+                    </a>
 
-                <a href="profile2.html" class="profile__card-link">
-                    <div class="profile__card">
-                        <img src="./img/symptom_youtsu.jpg" alt="腰痛" class="profile__photo">
-                        <p class="profile__name">
-                            <span class="profile__arrow">▶</span>腰痛
-                            <span class="profile__kana">（立ち仕事・家事に多い）</span>
-                        </p>
-                        <p class="profile__caption">
-                            重だるさを感じつつも我慢しがちな腰。悪化すると、椎間板
-                            ヘルニアや坐骨神経痛の引き金になることも。
-                        </p>
-                    </div>
-                </a>
+                    <a href="profile2.html" class="profile__card-link">
+                        <div class="profile__card">
+                            <img src="./img/symptom_youtsu.jpg" alt="腰痛" class="profile__photo">
+                            <p class="profile__name">
+                                <span class="profile__arrow">▶</span>腰痛
+                                <span class="profile__kana">（立ち仕事・家事に多い）</span>
+                            </p>
+                            <p class="profile__caption">
+                                重だるさを感じつつも我慢しがちな腰。悪化すると、椎間板
+                                ヘルニアや坐骨神経痛の引き金になることも。
+                            </p>
+                        </div>
+                    </a>
 
                     <div class="profile__card">
                         <img src="./img/symptom_nekoze.jpg" alt="猫背・スマホ首" class="profile__photo">
@@ -231,7 +240,7 @@
                     </p>
                 </div>
 
-                <div class="video__4vids">
+                <!-- <div class="video__4vids">
                     <div class="video__placeholder"> 
                         <img src="./img/33266454_s.jpg" alt="バランスボールのエクササイズ動画（準備中）" class="video__placeholder-img">
                         <p class="video__placeholder-text">動画は準備中です<br>近日公開予定</p>
@@ -242,17 +251,53 @@
                         <p class="video__placeholder-text">動画は準備中です<br>近日公開予定</p>
                     </div>
 
-                    <!-- <div class="video__placeholder"> 
-                        <img src="./img/28095044_s.jpg" alt="セルフケア動画（準備中）" class="video__placeholder-img">
+                    <div class="video__placeholder"> 
+                        <img src="./img/28095044_s.jpg" alt="自然の中でストレッチ（準備中）" class="video__placeholder-img">
                         <p class="video__placeholder-text">動画は準備中です<br>近日公開予定</p>
-                    </div> -->
+                    </div>
 
-                    <!-- <div class="video__placeholder"> 
+                    <div class="video__placeholder"> 
                         <img src="./img/28537325_s.jpg" alt="セルフケア動画（準備中）" class="video__placeholder-img">
                         <p class="video__placeholder-text">動画は準備中です<br>近日公開予定</p>
-                    </div> -->
+                    </div>
+                </div> -->
+
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+
+                            <div class="video__placeholder">
+                                <img src="./img/33266454_s.jpg" alt="バランスボールのエクササイズ動画（準備中）"
+                                    class="video__placeholder-img">
+                                <p class="video__placeholder-text">動画は準備中です<br>近日公開予定</p>
+                            </div>
+
+                        </div>
+                        <div class="swiper-slide">
+
+                            <div class="video__placeholder">
+                                <img src="./img/35171468_s.jpg" alt="背骨、腰のセルフケア動画（準備中）" class="video__placeholder-img">
+                                <p class="video__placeholder-text">動画は準備中です<br>近日公開予定</p>
+                            </div>
+
+                        </div>
+                        <div class="swiper-slide">
+
+                            <div class="video__placeholder">
+                                <img src="./img/28095044_s.jpg" alt="自然の中でストレッチ（準備中）" class="video__placeholder-img">
+                                <p class="video__placeholder-text">動画は準備中です<br>近日公開予定</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
-            
+
                 <!-- <p class="video__caption">
                     ↑動画です。クリックして再生してください。
                 </p> -->
@@ -269,9 +314,9 @@
                 <p class="topics__lead">
                     日常の健康ハックを学びましょう
                 </p>
-                
+
                 <div class="topics__3cards">
-                
+
                     <a href="topics1.html" class="topics__card-link">
                         <div class="topics__card">
                             <div class="topics__photowrap">
@@ -313,15 +358,16 @@
         <section class="cta">
             <div class="cta__inner">
                 <div class="cta__heading">
-                    <h2>小さな不調も、放っておかないで！<br>
+                    <h2 data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
+                        小さな不調も、放っておかないで！<br>
                         今日からできることが、きっとあります。
                     </h2>
                 </div>
-            
+
                 <p class="cta__catch">
                     <span class="cta__catch--text"><strong>
-                        毎日のちょっとした習慣で<br>
-                        未来のからだをつくりましょう。</strong>
+                            毎日のちょっとした習慣で<br>
+                            未来のからだをつくりましょう。</strong>
                     </span>
                 </p>
 
@@ -337,7 +383,7 @@
                 <div class="news__heading">
                     <h2>NEWS</h2>
                 </div>
-                
+
                 <ul class="news__list">
                     <li class="news__item">
                         <span class="news__date">2025.08.26 <em>New!</em></span>
@@ -360,7 +406,7 @@
 
             <p class="footer__logo">からだのシグナル</p>
             <small class="footer__logo-En">KARADA NO SIGNAL</small>
-            
+
             <ul class="footer__nav">
                 <li><a href="#mission">ミッション</a></li>
                 <li><a href="#profile">不調のケア</a></li>
@@ -369,7 +415,7 @@
                 <li><a href="#news">ニュース</a></li>
             </ul>
             <small class="footer__copyright">Copyright (C) 2026 からだのシグナル Project.</small>
-        
+
         </div>
     </footer>
 
@@ -377,12 +423,12 @@
     <script>
         const hamburger = document.getElementById('hamburger');
         const gnav = document.getElementById('gnav');
-        hamburger.addEventListener('click', function(){
+        hamburger.addEventListener('click', function () {
             gnav.classList.toggle('is-open');
             // const icon = hamburger.querySelector('i');
             // icon.classList.toggle('fa-bars');
             // icon.classList.toggle('fa-xmark');
-        })
+        });
 
         const gnavLinks = gnav.querySelectorAll('a');
         gnavLinks.forEach(function (link) {
@@ -390,7 +436,147 @@
                 gnav.classList.remove('is-open');
             });
         });
+
+        // ファーストビューを過ぎたらページトップボタンを表示
+        const pagetopWrap = document.querySelector('.pagetop-wrap');
+        if (pagetopWrap) {
+            const togglePagetop = function () {
+                if (window.scrollY > window.innerHeight) {
+                    pagetopWrap.classList.add('is-visible');
+                } else {
+                    pagetopWrap.classList.remove('is-visible');
+                }
+            };
+            window.addEventListener('scroll', togglePagetop, { passive: true });
+            togglePagetop();
+        }
+
+        // ヒーローキャッチ：カビのように不規則にじわっと浮かぶ（トップ復帰で再再生）
+        (function initHeroMoldCatch() {
+            const catchEl = document.getElementById('hero-catch');
+            if (!catchEl) return;
+
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const raw = catchEl.textContent.trim();
+
+            catchEl.textContent = '';
+            catchEl.setAttribute('aria-label', raw);
+
+            const chars = Array.from(raw);
+            const charSpans = [];
+            // 改行で単語が割れないよう、意味のまとまりごとに nowrap で包む
+            // 「小さな不調」|「を放置」|改行|「していませんか？」
+            const wrapRanges = [
+                [0, 5],
+                [5, 8],
+                [8, chars.length]
+            ];
+
+            wrapRanges.forEach(function (range, rangeIndex) {
+                const start = range[0];
+                const end = range[1];
+                if (start >= end) return;
+
+                if (rangeIndex === 2) {
+                    catchEl.appendChild(document.createElement('br'));
+                }
+
+                const wrap = document.createElement('span');
+                wrap.className = 'hero__catch-nowrap';
+
+                for (let i = start; i < end; i++) {
+                    const span = document.createElement('span');
+                    span.className = 'hero__catch-char ' + (i < 5 ? 'hero__catch-char--lead' : 'hero__catch-char--rest');
+                    span.textContent = chars[i];
+                    span.setAttribute('aria-hidden', 'true');
+                    wrap.appendChild(span);
+                    charSpans.push(span);
+                }
+
+                catchEl.appendChild(wrap);
+            });
+
+            if (reduceMotion) return;
+
+            const assignMoldDelays = function () {
+                const seeds = [Math.floor(Math.random() * charSpans.length)];
+                if (charSpans.length > 6) {
+                    seeds.push(Math.floor(Math.random() * charSpans.length));
+                }
+                if (charSpans.length > 12) {
+                    seeds.push(Math.floor(Math.random() * charSpans.length));
+                }
+
+                charSpans.forEach(function (span, i) {
+                    const dist = Math.min.apply(null, seeds.map(function (s) {
+                        return Math.abs(s - i);
+                    }));
+                    const jitter = Math.random() * 0.23;
+                    const delay = 0.23 + dist * 0.14 + jitter;
+                    span.style.setProperty('--mold-delay', delay.toFixed(2) + 's');
+                });
+            };
+
+            const playMold = function () {
+                catchEl.classList.remove('is-molding');
+                assignMoldDelays();
+                void catchEl.offsetWidth; // アニメ再適用のためのリフロー
+                requestAnimationFrame(function () {
+                    catchEl.classList.add('is-molding');
+                });
+            };
+
+            let leftFirstView = false;
+            const onScrollForMold = function () {
+                if (window.scrollY > window.innerHeight * 0.5) {
+                    leftFirstView = true;
+                    return;
+                }
+                if (leftFirstView && window.scrollY < 40) {
+                    leftFirstView = false;
+                    playMold();
+                }
+            };
+
+            window.addEventListener('scroll', onScrollForMold, { passive: true });
+            playMold();
+        })();
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- swiperのスライダー -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            slidesPerView: 1, // デフォルト(スマホ幅)は1枚ずつ表示
+            slidesPerGroup: 1, // 送る枚数は常に1枚ずつ
+            spaceBetween: 20,
+            speed: 600, // スライドが切り替わる時のアニメーション速度(ミリ秒)
+            autoplay: {
+                delay: 3000, // 3秒ごとに自動で次のスライドへ
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true, // マウスを乗せている間は一時停止
+            },
+            allowTouchMove: true, // ドラッグ/スワイプでの手動送りを有効化
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                // 769px以上(サイト全体のブレークポイントと統一)で2枚同時表示に
+                769: {
+                    slidesPerView: 2,
+                    spaceBetween: 28,
+                }
+            },
+        });
     </script>
 
 </body>
+
 </html>
