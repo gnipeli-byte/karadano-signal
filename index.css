@@ -174,15 +174,15 @@ header {
 .hero__panel {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     background-color: var(--color-primary-soft);
-    padding: 40px;
+    padding: 40px 40px 40px 18%;
 }
 
 .hero__panel .hero__catch {
     color: var(--color-text);
     text-shadow: none;
-    text-align: center;
+    text-align: left;
 }
 
 .hero__catch {
@@ -327,7 +327,7 @@ header {
 .mission__text {
     color: var(--color-surface);
     font-family: "M PLUS Rounded 1c", "Noto Sans JP", sans-serif;
-    text-align: center;
+    text-align: left;
     max-width: 720px;
     /* 1行の文字数を制限して読みやすくする */
     margin: 0 auto;
@@ -340,6 +340,11 @@ header {
     font-weight: 500;
     line-height: 2;
     letter-spacing: 0.03em;
+}
+
+.mission__text-nowrap {
+    display: inline-block;
+    white-space: nowrap;
 }
 
 .mission__text-large1 {
@@ -369,6 +374,18 @@ header {
     padding-bottom: 16px;
     line-height: 1.6;
     text-align: center;
+}
+
+/* 通常は2行（〜プロジェクトが / 生まれました。）、320px以下だけ3行 */
+.mission__catch-nowrap,
+.mission__catch-wide {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.mission__catch-narrow,
+.mission__catch-br--narrow {
+    display: none;
 }
 
 .mission__point {
@@ -471,7 +488,7 @@ header {
 
 .profile {
     background-color: var(--color-primary-soft);
-    padding: 50px 0 60px;
+    padding: 50px 0 54px;
 }
 
 .profile__inner {
@@ -595,6 +612,11 @@ header {
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--color-primary-deep);
+}
+
+.profile__footer-nowrap {
+    display: inline-block;
+    white-space: nowrap;
 }
 
 
@@ -1519,17 +1541,17 @@ header {
     .mission__text-1st,
     .mission__text-2nd {
         font-size: clamp(1rem, 1.4vw + 0.96rem, 1.2rem);
-        letter-spacing: 0.2em;
+        letter-spacing: 0.06em;
     }
 
     .mission__text-3rd {
         font-size: clamp(1rem, 1.4vw + 0.96rem, 1.2rem);
-        letter-spacing: 0.2em;
+        letter-spacing: 0.06em;
     }
 
     .mission__text-large1 {
         font-size: clamp(1rem, 1.4vw + 0.96rem, 1.2rem);
-        letter-spacing: 0.2em;
+        letter-spacing: 0.06em;
     }
 
     .mission__text-large2 {
@@ -1543,6 +1565,18 @@ header {
 
     .mission__catch-large {
         font-size: 2.2rem;
+    }
+
+    .mission__point-badge {
+        gap: 7px;
+        padding: 6px 16px;
+        font-size: 0.78rem;
+        letter-spacing: 0.09em;
+        margin-bottom: 8px;
+    }
+
+    .mission__point-badge i {
+        font-size: 0.92rem;
     }
 
     .mission__point-box {
@@ -1822,7 +1856,7 @@ header {
     }
 
     .hero__panel {
-        padding: 20px 12px;
+        padding: 20px 12px 20px 16%;
     }
 
     .hero__catch-br--pc {
@@ -1830,6 +1864,22 @@ header {
     }
 
     .hero__catch-br--sp {
+        display: revert;
+    }
+}
+
+/* iPhone SE第1世代（320px）付近だけミッションキャッチを3行に */
+@media screen and (max-width: 320px) {
+    .mission__catch-wide {
+        display: none;
+    }
+
+    .mission__catch-narrow {
+        display: inline-block;
+        white-space: nowrap;
+    }
+
+    .mission__catch-br--narrow {
         display: revert;
     }
 }
