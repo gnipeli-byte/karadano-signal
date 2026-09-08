@@ -90,7 +90,7 @@
                     <p class="mission__text">
                         <!-- <span class="mission__text-1st"><b class="mission__text-large1">その我慢が</b></span><br> -->
                         <span class="mission__text-2nd">日々の仕事や家事の忙しさの中、様々なからだの不調を抱えつつも放置しがちな現代人…
-                            その積み重なった不調を何とかできないかと悩む人は多いのではないか？
+                            その積み重なった不調をどうにかできないのだろうか？
                         </span>
                     </p>
                 </div>
@@ -100,7 +100,8 @@
             <div class="mission__lime">
 
                 <div class="mission__inner">
-                    <h2 class="mission__catch" id="mission-heading" data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
+                    <h2 class="mission__catch" id="mission-heading" data-aos="fade-right" data-aos-duration="800"
+                        data-aos-delay="100">
                         <span class="marker">そこでこのプロジェクトが生まれました。</span>
                     </h2>
 
@@ -471,11 +472,13 @@
             const chars = Array.from(raw);
             const charSpans = [];
             // 改行で単語が割れないよう、意味のまとまりごとに nowrap で包む
-            // 「小さな不調」|「を放置」|改行|「していませんか？」
+            // PC: 「小さな不調」「を放置」|改行|「して」「いませんか？」
+            // SP: 「小さな不調」「を放置」「して」|改行|「いませんか？」
             const wrapRanges = [
-                [0, 5],
-                [5, 8],
-                [8, chars.length]
+                [0, 5],   // 小さな不調
+                [5, 8],   // を放置
+                [8, 10],  // して
+                [10, chars.length] // いませんか？
             ];
 
             wrapRanges.forEach(function (range, rangeIndex) {
@@ -484,7 +487,14 @@
                 if (start >= end) return;
 
                 if (rangeIndex === 2) {
-                    catchEl.appendChild(document.createElement('br'));
+                    const brPc = document.createElement('br');
+                    brPc.className = 'hero__catch-br hero__catch-br--pc';
+                    catchEl.appendChild(brPc);
+                }
+                if (rangeIndex === 3) {
+                    const brSp = document.createElement('br');
+                    brSp.className = 'hero__catch-br hero__catch-br--sp';
+                    catchEl.appendChild(brSp);
                 }
 
                 const wrap = document.createElement('span');

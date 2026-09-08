@@ -222,6 +222,11 @@ header {
     white-space: nowrap;
 }
 
+/* PCは「放置」のあと、SPは「して」のあとで改行 */
+.hero__catch-br--sp {
+    display: none;
+}
+
 .hero__catch.is-molding .hero__catch-char {
     animation: hero-mold-in 1.42s cubic-bezier(0.15, 0.85, 0.25, 1) forwards;
     animation-delay: var(--mold-delay, 0s);
@@ -1782,4 +1787,26 @@ header {
 
 }
 
-/* end @media 768px */
+/* 狭い幅ではヒーローを画像とテキスト半々に */
+@media screen and (max-width: 600px) {
+    .hero__split {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero__split .hero__img,
+    .hero__panel {
+        min-width: 0; /* nowrap文字で列が押し広がるのを防ぐ */
+    }
+
+    .hero__panel {
+        padding: 20px 12px;
+    }
+
+    .hero__catch-br--pc {
+        display: none;
+    }
+
+    .hero__catch-br--sp {
+        display: revert;
+    }
+}
