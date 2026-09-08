@@ -12,7 +12,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
     <link rel="stylesheet" href="index.css">
 </head>
 
@@ -67,18 +67,19 @@
     </header>
 
     <main>
-        <div class="hero">
+        <section class="hero">
+            <h2 class="u-visually-hidden">メインビジュアル</h2>
             <div class="hero__split">
                 <img src="./img/hero_care.jpg" class="hero__img" alt="腰痛の女性会社員の背中">
                 <div class="hero__panel">
-                    <p class="hero__catch" id="hero-catch" aria-label="小さな不調を放置していませんか？">
+                    <p class="hero__catch" id="hero-catch">
                         小さな不調を放置していませんか？
                     </p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="mission" id="mission">
+        <section class="mission" id="mission" aria-labelledby="mission-heading">
             <div class="mission__blue">
 
                 <div class="mission__inner">
@@ -89,7 +90,7 @@
                     <p class="mission__text">
                         <!-- <span class="mission__text-1st"><b class="mission__text-large1">その我慢が</b></span><br> -->
                         <span class="mission__text-2nd">日々の仕事や家事の忙しさの中、様々なからだの不調を抱えつつも放置しがちな現代人…
-                            病院に行くほどではないが、積み重なった不調を何とかできないかと悩む人は多いのではないか？
+                            その積み重なった不調を何とかできないかと悩む人は多いのではないか？
                         </span>
                     </p>
                 </div>
@@ -99,9 +100,9 @@
             <div class="mission__lime">
 
                 <div class="mission__inner">
-                    <p class="mission__catch" data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
-                        <span class="marker">そこからこのプロジェクトが生まれました！</span>
-                    </p>
+                    <h2 class="mission__catch" id="mission-heading" data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
+                        <span class="marker">そこでこのプロジェクトが生まれました。</span>
+                    </h2>
 
                     <div class="mission__point">
 
@@ -133,7 +134,7 @@
                 </div>
 
             </div>
-        </div>
+        </section>
 
         <section class="profile" id="profile">
             <div class="profile__inner">
@@ -150,77 +151,77 @@
                 <div class="profile__6cards">
 
                     <a href="profile1.html" class="profile__card-link">
-                        <div class="profile__card">
+                        <article class="profile__card">
                             <img src="./img/symptom_katakori.jpg" alt="肩こり" class="profile__photo">
-                            <p class="profile__name">
+                            <h3 class="profile__name">
                                 <span class="profile__arrow">▶</span>肩こり
                                 <span class="profile__kana">（デスクワークに多い）</span>
-                            </p>
+                            </h3>
                             <p class="profile__caption">
                                 デスクワークで動かない首や肩。放っておくと、慢性的な頭痛や
                                 四十肩につながることもあります。
                             </p>
-                        </div>
+                        </article>
                     </a>
 
                     <a href="profile2.html" class="profile__card-link">
-                        <div class="profile__card">
+                        <article class="profile__card">
                             <img src="./img/symptom_youtsu.jpg" alt="腰痛" class="profile__photo">
-                            <p class="profile__name">
+                            <h3 class="profile__name">
                                 <span class="profile__arrow">▶</span>腰痛
                                 <span class="profile__kana">（立ち仕事・家事に多い）</span>
-                            </p>
+                            </h3>
                             <p class="profile__caption">
                                 重だるさを感じつつも我慢しがちな腰。悪化すると、椎間板
                                 ヘルニアや坐骨神経痛の引き金になることも。
                             </p>
-                        </div>
+                        </article>
                     </a>
 
-                    <div class="profile__card">
+                    <article class="profile__card">
                         <img src="./img/symptom_nekoze.jpg" alt="猫背・スマホ首" class="profile__photo">
-                        <p class="profile__name">
+                        <h3 class="profile__name">
                             <span class="profile__arrow">▶</span>猫背・スマホ首
                             <span class="profile__kana">（スマホ・PC操作に多い）</span>
-                        </p>
+                        </h3>
                         <p class="profile__caption">
                             気づかないうちに前に出た頭。ストレートネックや自律神経
                             の乱れにつながる可能性があります。
                         </p>
-                    </div>
-                    <div class="profile__card">
+                    </article>
+                    <article class="profile__card">
                         <img src="./img/symptom_zutsu.jpg" alt="慢性的な頭痛" class="profile__photo">
-                        <p class="profile__name">
+                        <h3 class="profile__name">
                             <span class="profile__arrow">▶</span>慢性的な頭痛
                             <span class="profile__kana">（見過ごされがち）</span>
-                        </p>
+                        </h3>
                         <p class="profile__caption">
                             「いつものこと」と見過ごしがちな頭痛。原因を探らないまま
                             鎮痛剤に頼る生活が習慣化することも。
                         </p>
-                    </div>
-                    <div class="profile__card">
+                    </article>
+                    <article class="profile__card">
                         <img src="./img/symptom_hie.jpg" alt="冷え性・むくみ" class="profile__photo">
-                        <p class="profile__name">
+                        <h3 class="profile__name">
                             <span class="profile__arrow">▶</span>冷え性・むくみ
                             <span class="profile__kana">（季節を問わず）</span>
-                        </p>
+                        </h3>
                         <p class="profile__caption">
                             季節を問わず感じる手足の冷え。血流の滞りが慢性化すると、
                             免疫力の低下につながることもあります。
                         </p>
-                    </div>
-                    <div class="profile__card">
+                    </article>
+                    <article class="profile__card">
                         <img src="./img/symptom_ganseihirou.jpg" alt="眼精疲労" class="profile__photo">
-                        <p class="profile__name">
+                        <h3 class="profile__name">
                             <span class="profile__arrow">▶</span>眼精疲労
                             <span class="profile__kana">（画面作業に多い）</span>
-                        </p>
+                        </h3>
                         <p class="profile__caption">
                             画面を見続ける毎日で蓄積する目の疲れ。肩こりの慢性化や、
                             睡眠の質の低下と関係していることも。
                         </p>
-                    </div>
+                    </article>
                 </div>
                 <p class="profile__footer">
                     見過ごしているサインはありませんでしたか？
@@ -318,38 +319,38 @@
                 <div class="topics__3cards">
 
                     <a href="topics1.html" class="topics__card-link">
-                        <div class="topics__card">
+                        <article class="topics__card">
                             <div class="topics__photowrap">
                                 <img src="./img/column_taigen.jpg" alt="デスクで疲れを感じる人" class="topics__photo">
                             </div>
-                            <p class="topics__caption">
+                            <h3 class="topics__caption">
                                 なぜ疲れは腰や肩に出やすいのか？
-                            </p>
-                        </div>
+                            </h3>
+                        </article>
                     </a>
 
                     <a href="topics2.html" class="topics__card-link">
-                        <div class="topics__card">
+                        <article class="topics__card">
                             <div class="topics__photowrap">
                                 <img src="./img/column_selfcare.jpg" alt="ストレッチをする様子" class="topics__photo">
                             </div>
-                            <p class="topics__caption">
+                            <h3 class="topics__caption">
                                 セルフケアと整体、
                                 何が違う？
-                            </p>
-                        </div>
+                            </h3>
+                        </article>
                     </a>
 
-                    <div class="topics__card">
+                    <article class="topics__card">
                         <div class="topics__photowrap">
                             <span class="topics__new">NEW</span>
                             <img src="./img/column_hie.jpg" alt="冷え対策の様子" class="topics__photo">
                         </div>
-                        <p class="topics__caption">
+                        <h3 class="topics__caption">
                             からだを冷やさない
                             毎日の工夫（近日公開！）
-                        </p>
-                    </div>
+                        </h3>
+                    </article>
                 </div>
 
             </div>
@@ -385,10 +386,12 @@
                 </div>
 
                 <ul class="news__list">
-                    <li class="news__item">
-                        <span class="news__date">2025.08.26 <em>New!</em></span>
-                        <p class="news__title">『からだのシグナル』プロジェクト始動！</p>
-                        <p class="news__text">日常に潜む小さな不調のサインと、そのセルフケア方法を発信していきます。</p>
+                    <li>
+                        <article class="news__item">
+                            <span class="news__date">2025.08.26 <em>New!</em></span>
+                            <h3 class="news__title">『からだのシグナル』プロジェクト始動！</h3>
+                            <p class="news__text">日常に潜む小さな不調のサインと、そのセルフケア方法を発信していきます。</p>
+                        </article>
                     </li>
                 </ul>
             </div>
@@ -460,7 +463,10 @@
             const raw = catchEl.textContent.trim();
 
             catchEl.textContent = '';
-            catchEl.setAttribute('aria-label', raw);
+            const srOnly = document.createElement('span');
+            srOnly.className = 'u-visually-hidden';
+            srOnly.textContent = raw;
+            catchEl.appendChild(srOnly);
 
             const chars = Array.from(raw);
             const charSpans = [];
