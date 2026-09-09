@@ -89,8 +89,9 @@
                     </div> -->
                     <p class="mission__text">
                         <!-- <span class="mission__text-1st"><b class="mission__text-large1">その我慢が</b></span><br> -->
-                        <span class="mission__text-2nd"><span class="mission__text-nowrap">日々の仕事や家事の忙しさの中、</span><span class="mission__text-nowrap">様々なからだの不調を抱えつつも放置しがちな現代人…</span><br>
-                            その積み重なった不調を<span class="mission__text-nowrap">どうにかできないのだろうか？</span>
+                        <span class="mission__text-2nd"><span class="mission__text-nowrap">日々の忙しさの中、</span><br>
+                            様々なからだの不調を抱えつつも放置しがちな現代人…<br>
+                            その積み重なった不調をどうにかできないのだろうか？
                         </span>
                     </p>
                 </div>
@@ -100,7 +101,7 @@
             <div class="mission__lime">
 
                 <div class="mission__inner">
-                    <h2 class="mission__catch" id="mission-heading" data-aos="fade-right" data-aos-duration="800"
+                    <h2 class="mission__catch" id="mission-heading" data-aos="fade-up" data-aos-duration="800"
                         data-aos-delay="100">
                         <span class="mission__catch-wide marker">そこでこのプロジェクトが</span>
                         <span class="mission__catch-narrow marker">そこでこの</span><br class="mission__catch-br--narrow">
@@ -226,7 +227,8 @@
                     </article>
                 </div>
                 <p class="profile__footer">
-                    <span class="profile__footer-nowrap">見過ごしているサインは</span><span class="profile__footer-nowrap">ありませんでしたか？</span>
+                    <span class="profile__footer-nowrap">見過ごしているサインは</span><span
+                        class="profile__footer-nowrap">ありませんでしたか？</span>
                 </p>
             </div>
         </section>
@@ -362,8 +364,10 @@
             <div class="cta__inner">
                 <div class="cta__heading">
                     <h2 data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
-                        小さな不調も、放っておかないで！<br>
-                        今日からできることが、きっとあります。
+                        <span class="cta__heading-line">小さな不調も</span><br class="cta__br--sp">
+                        <span class="cta__heading-line">放っておかないで！</span><br>
+                        <span class="cta__heading-line">今日からできることが、</span><br>
+                        <span class="cta__heading-line">きっとあります。</span>
                     </h2>
                 </div>
 
@@ -472,46 +476,65 @@
 
             const chars = Array.from(raw);
             const charSpans = [];
-            // 改行で単語が割れないよう、意味のまとまりごとに nowrap で包む
-            // PC: 「小さな不調」「を放置」|改行|「して」「いませんか？」
-            // SP: 「小さな不調」「を放置」「して」|改行|「いませんか？」
-            const wrapRanges = [
-                [0, 5],   // 小さな不調
-                [5, 8],   // を放置
-                [8, 10],  // して
-                [10, chars.length] // いませんか？
-            ];
+            // PC(≧993): 「小さな不調を放置」|改行|「していませんか？」
+            // 361〜992px: 「小さな不調」「を放置して」|改行|「いませんか？」
+            // 〜360px: 「小さな」|改行|「不調を」|改行|「放置して」|改行|「いませんか？」
+            // ※ PC改行を inline-block 内部に置かない（baseline揃えで「を放置」が上に飛ぶため）
 
-            wrapRanges.forEach(function (range, rangeIndex) {
-                const start = range[0];
-                const end = range[1];
-                if (start >= end) return;
-
-                if (rangeIndex === 2) {
-                    const brPc = document.createElement('br');
-                    brPc.className = 'hero__catch-br hero__catch-br--pc';
-                    catchEl.appendChild(brPc);
-                }
-                if (rangeIndex === 3) {
-                    const brSp = document.createElement('br');
-                    brSp.className = 'hero__catch-br hero__catch-br--sp';
-                    catchEl.appendChild(brSp);
-                }
-
-                const wrap = document.createElement('span');
-                wrap.className = 'hero__catch-nowrap';
-
+            const appendChars = function (parent, start, end) {
                 for (let i = start; i < end; i++) {
                     const span = document.createElement('span');
                     span.className = 'hero__catch-char ' + (i < 5 ? 'hero__catch-char--lead' : 'hero__catch-char--rest');
                     span.textContent = chars[i];
                     span.setAttribute('aria-hidden', 'true');
-                    wrap.appendChild(span);
+                    parent.appendChild(span);
                     charSpans.push(span);
                 }
+            };
 
-                catchEl.appendChild(wrap);
-            });
+            const appendWrap = function (parent, start, end) {
+                const wrap = document.createElement('span');
+                wrap.className = 'hero__catch-nowrap';
+                appendChars(wrap, start, end);
+                parent.appendChild(wrap);
+                return wrap;
+            };
+
+            const appendBr = function (parent, modifier) {
+                const br = document.createElement('br');
+                br.className = 'hero__catch-br hero__catch-br--' + modifier;
+                parent.appendChild(br);
+            };
+
+            const appendLayout = function (name) {
+                const layout = document.createElement('span');
+                layout.className = 'hero__catch-layout hero__catch-layout--' + name;
+                catchEl.appendChild(layout);
+                return layout;
+            };
+
+            // PC（≧993）
+            const layoutPc = appendLayout('pc');
+            appendWrap(layoutPc, 0, 8); // 小さな不調を放置
+            appendBr(layoutPc, 'pc');
+            appendWrap(layoutPc, 8, chars.length); // していませんか？
+
+            // 中間〜やや狭い（361〜992）
+            const layoutWide = appendLayout('wide');
+            appendWrap(layoutWide, 0, 5); // 小さな不調
+            appendWrap(layoutWide, 5, 10); // を放置して
+            appendBr(layoutWide, 'wide');
+            appendWrap(layoutWide, 10, chars.length); // いませんか？
+
+            // 360px以下
+            const layoutNarrow = appendLayout('narrow');
+            appendWrap(layoutNarrow, 0, 3); // 小さな
+            appendBr(layoutNarrow, 'narrow');
+            appendWrap(layoutNarrow, 3, 6); // 不調を
+            appendBr(layoutNarrow, 'narrow');
+            appendWrap(layoutNarrow, 6, 10); // 放置して
+            appendBr(layoutNarrow, 'narrow');
+            appendWrap(layoutNarrow, 10, chars.length); // いませんか？
 
             if (reduceMotion) return;
 

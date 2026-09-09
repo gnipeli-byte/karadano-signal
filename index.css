@@ -176,7 +176,7 @@ header {
     align-items: center;
     justify-content: flex-start;
     background-color: var(--color-primary-soft);
-    padding: 40px 40px 40px 18%;
+    padding: 40px 40px 40px calc(18% - 12px);
 }
 
 .hero__panel .hero__catch {
@@ -220,11 +220,17 @@ header {
 .hero__catch-nowrap {
     display: inline-block;
     white-space: nowrap;
+    vertical-align: top;
 }
 
-/* PCは「放置」のあと、SPは「して」のあとで改行 */
-.hero__catch-br--sp {
+/* 幅ごとの組みを切り替え（display:contents で子を親の行に参加させる） */
+.hero__catch-layout--pc,
+.hero__catch-layout--narrow {
     display: none;
+}
+
+.hero__catch-layout--wide {
+    display: contents;
 }
 
 .hero__catch.is-molding .hero__catch-char {
@@ -291,6 +297,8 @@ header {
 
 .mission__blue {
     background-color: var(--color-primary);
+    max-width: 100%;
+    overflow-x: clip;
 }
 
 .mission__blue .mission__inner {
@@ -328,9 +336,11 @@ header {
     color: var(--color-surface);
     font-family: "M PLUS Rounded 1c", "Noto Sans JP", sans-serif;
     text-align: left;
-    max-width: 720px;
-    /* 1行の文字数を制限して読みやすくする */
+    width: fit-content;
+    max-width: min(720px, 100%);
+    /* 左揃えのまま、ブロック自体は中央に */
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 /* .mission__text-1st, */
@@ -357,6 +367,7 @@ header {
     background-color: var(--color-bg-warm);
     padding: 60px 0 64px;
     text-align: center;
+    overflow-x: clip;
 }
 
 .mission__lime .mission__inner {
@@ -374,13 +385,16 @@ header {
     padding-bottom: 16px;
     line-height: 1.6;
     text-align: center;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
-/* 通常は2行（〜プロジェクトが / 生まれました。）、320px以下だけ3行 */
+/* 通常は2行（〜プロジェクトが / 生まれました。）、狭い幅だけ3行 */
 .mission__catch-nowrap,
 .mission__catch-wide {
     display: inline-block;
     white-space: nowrap;
+    max-width: 100%;
 }
 
 .mission__catch-narrow,
@@ -427,8 +441,10 @@ header {
 
 .mission__point-text {
     padding: 0;
-    margin: 0 0 14px;
-    text-align: center;
+    margin: 0 auto 14px;
+    text-align: left;
+    width: fit-content;
+    max-width: 100%;
 }
 
 .u-mark {
@@ -438,12 +454,11 @@ header {
 
 .point-text-small {
     font-size: clamp(0.8rem, 0.75rem + 0.25vw, 0.92rem);
-    text-align: center;
+    text-align: left;
     margin-top: 12px;
     letter-spacing: 0.06em;
     font-family: "M PLUS Rounded 1c", "Noto Sans JP", sans-serif;
     display: block;
-    width: 100%;
     color: #6b7580;
 }
 
@@ -489,6 +504,7 @@ header {
 .profile {
     background-color: var(--color-primary-soft);
     padding: 50px 0 54px;
+    overflow-x: clip;
 }
 
 .profile__inner {
@@ -612,11 +628,14 @@ header {
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--color-primary-deep);
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .profile__footer-nowrap {
     display: inline-block;
     white-space: nowrap;
+    max-width: 100%;
 }
 
 
@@ -916,6 +935,15 @@ header {
     font-feature-settings: "palt";
     letter-spacing: -0.08em;
     font-family: "M PLUS Rounded 1c", "Noto Sans JP", sans-serif;
+}
+
+.cta__heading-line {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.cta__br--sp {
+    display: none;
 }
 
 .cta__heading::first-line {
@@ -1529,9 +1557,10 @@ header {
     }
 
     .mission__blue .mission__inner {
-        flex-wrap: nowrap;
-        padding: 28px 10px;
+        padding: 28px 4px;
         gap: 8px;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .mission__text {
@@ -1540,7 +1569,7 @@ header {
 
     .mission__text-1st,
     .mission__text-2nd {
-        font-size: clamp(1rem, 1.4vw + 0.96rem, 1.2rem);
+        font-size: calc(clamp(1rem, 1.4vw + 0.96rem, 1.2rem) * 0.95);
         letter-spacing: 0.06em;
     }
 
@@ -1654,11 +1683,16 @@ header {
     }
 
     .profile__footer {
-        font-size: 1.33rem;
+        font-size: 1.2rem;
         letter-spacing: 0.04em;
-        padding: 48px 40px 0;
+        padding: 48px 8px 0;
         margin: 0 0 6px;
         font-feature-settings: "palt";
+    }
+
+    .profile__footer-nowrap {
+        display: block;
+        text-align: center;
     }
 
     /* ===== VIDEO ===== */
@@ -1705,6 +1739,10 @@ header {
 
     .cta__heading {
         font-size: 1.1rem;
+    }
+
+    .cta__br--sp {
+        display: revert;
     }
 
     .cta__catch {
@@ -1856,20 +1894,35 @@ header {
     }
 
     .hero__panel {
-        padding: 20px 12px 20px 16%;
-    }
-
-    .hero__catch-br--pc {
-        display: none;
-    }
-
-    .hero__catch-br--sp {
-        display: revert;
+        padding: 20px 12px 20px calc(16% - 12px);
     }
 }
 
-/* iPhone SE第1世代（320px）付近だけミッションキャッチを3行に */
-@media screen and (max-width: 320px) {
+/* PCは「小さな不調を放置／していませんか？」 */
+@media screen and (min-width: 993px) {
+    .hero__catch-layout--wide {
+        display: none;
+    }
+
+    .hero__catch-layout--pc {
+        display: contents;
+    }
+}
+
+/* さらに狭い幅では「小さな」→「不調を」→「放置して」→「いませんか？」 */
+@media screen and (max-width: 360px) {
+    .hero__catch-layout--wide,
+    .hero__catch-layout--pc {
+        display: none;
+    }
+
+    .hero__catch-layout--narrow {
+        display: contents;
+    }
+}
+
+/* 狭い幅（〜400px）ではミッションキャッチを3行に */
+@media screen and (max-width: 400px) {
     .mission__catch-wide {
         display: none;
     }
@@ -1877,6 +1930,7 @@ header {
     .mission__catch-narrow {
         display: inline-block;
         white-space: nowrap;
+        max-width: 100%;
     }
 
     .mission__catch-br--narrow {
