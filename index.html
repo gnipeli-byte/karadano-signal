@@ -32,6 +32,28 @@
 </head>
 
 <body id="top">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            const hamburger = document.getElementById('hamburger');
+            const gnav = document.getElementById('gnav');
+                if(hamburger && gnav){
+                hamburger.addEventListener('click', function () {
+                    gnav.classList.toggle('is-open');
+                    hamburger.classList.toggle('is-open'); /* この1行を追加 */
+                });
+                }
+            
+
+            const gnavLinks = gnav ? gnav.querySelectorAll('a') : [];
+            gnavLinks.forEach(function (link) {
+                link.addEventListener('click', function () {
+                    gnav.classList.remove('is-open');
+                });
+            });
+        });
+    </script>
+
     <header>
         <div class="header__inner">
             <h1>
@@ -41,7 +63,11 @@
                 </a>
             </h1>
 
-            <button class="hamburger" id="hamburger" aria-label="メニュー"><i class="fas fa-bars"></i></button>
+            <button class="hamburger" id="hamburger" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav class="gnav" id="gnav">
 
                 <ul class="gnav__list">
@@ -445,22 +471,6 @@
 
 
     <script>
-        const hamburger = document.getElementById('hamburger');
-        const gnav = document.getElementById('gnav');
-        hamburger.addEventListener('click', function () {
-            gnav.classList.toggle('is-open');
-            // const icon = hamburger.querySelector('i');
-            // icon.classList.toggle('fa-bars');
-            // icon.classList.toggle('fa-xmark');
-        });
-
-        const gnavLinks = gnav.querySelectorAll('a');
-        gnavLinks.forEach(function (link) {
-            link.addEventListener('click', function () {
-                gnav.classList.remove('is-open');
-            });
-        });
-
         // ファーストビューを過ぎたらページトップボタンを表示
         const pagetopWrap = document.querySelector('.pagetop-wrap');
         if (pagetopWrap) {
@@ -598,13 +608,13 @@
         })();
     </script>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script>
         AOS.init();
     </script>
 
     <!-- swiperのスライダー -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" defer></script>
     <script>
         const swiper = new Swiper('.swiper', {
             loop: true,
@@ -629,6 +639,43 @@
                     spaceBetween: 28,
                 }
             },
+        });
+    </script>
+
+    <script>
+        // 外部ファイル（defer）がすべて読み込まれ、実行可能になったら初期化
+        window.addEventListener('DOMContentLoaded', function(){
+            // AOSの初期化
+            if (typeof AOS !== 'undefined') {
+                AOS.init();
+            }
+            
+            // Swiperの初期化
+            if (typeof Swiper !== 'undefined') {
+                const swiper = new Swiper('.swiper', {
+                    loop: true,
+                    slidesPerView: 1,
+                    slidesPerGroup: 1,
+                    spaceBetween: 20,
+                    speed: 600,
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true,
+                    },
+                    allowTouchMove: true,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    breakpoints: {
+                        769: {
+                            slidesPerView: 2,
+                            spaceBetween: 28,
+                        }
+                    },
+                });
+            }
         });
     </script>
 
