@@ -34,16 +34,16 @@
 <body id="top">
 
     <script>
-        document.addEventListener('DOMContentLoaded', function(){
+        document.addEventListener('DOMContentLoaded', function () {
             const hamburger = document.getElementById('hamburger');
             const gnav = document.getElementById('gnav');
-                if(hamburger && gnav){
+            if (hamburger && gnav) {
                 hamburger.addEventListener('click', function () {
                     gnav.classList.toggle('is-open');
                     hamburger.classList.toggle('is-open'); /* この1行を追加 */
                 });
-                }
-            
+            }
+
 
             const gnavLinks = gnav ? gnav.querySelectorAll('a') : [];
             gnavLinks.forEach(function (link) {
@@ -464,7 +464,10 @@
                 <li><a href="#topics">コラム</a></li>
                 <li><a href="#news">ニュース</a></li>
             </ul>
-            <small class="footer__copyright">Copyright (C) 2026 からだのシグナル Project.</small>
+            <small class="footer__notice">※本サイトは架空のデモサイトです。掲載の画像は素材であり、実在の企業・サービス・人物とは関係ありません。</small><br>
+            <small class="footer__notice">画像出典：<a href=" https://www.pakutaso.com/" target="_blank">ぱくたそ</a>, <a
+                    href="https://www.photo-ac.com/" target="_blank">写真AC</a></small><br>
+            <small class="footer__copyright">Copyright (C) 2026 からだのシグナル Project. (fictional)</small>
 
         </div>
     </footer>
@@ -644,12 +647,12 @@
 
     <script>
         // 外部ファイル（defer）がすべて読み込まれ、実行可能になったら初期化
-        window.addEventListener('DOMContentLoaded', function(){
+        window.addEventListener('DOMContentLoaded', function () {
             // AOSの初期化
             if (typeof AOS !== 'undefined') {
                 AOS.init();
             }
-            
+
             // Swiperの初期化
             if (typeof Swiper !== 'undefined') {
                 const swiper = new Swiper('.swiper', {
