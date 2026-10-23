@@ -432,14 +432,11 @@ header {
 }
 
 .mission__point-icon {
-    width: 1rem;
-    height: 1rem;
+    width: 1.15rem;
+    height: 1.15rem;
     flex: none;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.8;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+    display: block;
+    object-fit: contain;
 }
 
 .mission__point-box {
@@ -603,9 +600,14 @@ header {
     box-shadow: 0 16px 32px rgba(38, 49, 60, 0.14);
 }
 
+.profile__card > .optimized-picture {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+
 .profile__photo {
     width: 100%;
-    aspect-ratio: 4 / 3;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
@@ -940,9 +942,14 @@ header {
     box-shadow: 0 16px 32px rgba(38, 49, 60, 0.14);
 }
 
+.topics__photowrap > .optimized-picture {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+
 .topics__photo {
     width: 100%;
-    aspect-ratio: 4 / 3;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
@@ -1090,6 +1097,17 @@ header {
 
 .news__heading::after {
     content: none;
+}
+
+.profile__heading-deco::before,
+.video__heading-deco::before,
+.topics__heading::before,
+.news__heading::before {
+    padding-left: 34px;
+    background-image: url("./img/mission-sprout.png");
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    background-size: 1rem 1rem;
 }
 
 .news__list {
@@ -1739,8 +1757,8 @@ header {
     }
 
     .mission__point-icon {
-        width: 0.92rem;
-        height: 0.92rem;
+        width: 1.05rem;
+        height: 1.05rem;
     }
 
     .mission__point-box {
