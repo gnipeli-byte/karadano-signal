@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="index.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=M+PLUS+Rounded+1c:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body id="top">
@@ -20,7 +19,11 @@
             </a>
             
 
-            <button class="hamburger" id="hamburger" aria-label="メニュー"><i class="fas fa-bars"></i></button>
+            <button class="hamburger" id="hamburger" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav class="gnav" id="gnav">
 
                 <ul class="gnav__list">
@@ -74,7 +77,11 @@
                 <div class="topics-detail__inner">
                     <div class="topics-detail__content">
                         <div class="topics-detail__photo">
-                            <img src="./img/column_taigen_detail.jpg" alt="デスクで疲れを感じる人">
+                            <picture class="optimized-picture">
+                                <source srcset="./img/column_taigen_detail.webp" type="image/webp">
+                                <img src="./img/column_taigen_detail.jpg" alt="デスクで疲れを感じる人" width="800"
+                                    height="569" loading="lazy">
+                            </picture>
                         </div>
                     
                         <div class="topics-detail__body">
@@ -134,9 +141,7 @@
         const gnav = document.getElementById('gnav');
         hamburger.addEventListener('click', function(){
             gnav.classList.toggle('is-open');
-            // const icon = hamburger.querySelector('i');
-            // icon.classList.toggle('fa-bars');
-            // icon.classList.toggle('fa-xmark');
+            hamburger.classList.toggle('is-open');
         })
 
         const gnavLinks = gnav.querySelectorAll('a');

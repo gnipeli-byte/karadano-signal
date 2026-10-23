@@ -19,15 +19,13 @@
     <meta name="twitter:description" content="働く世代が日々の不調に気づき、生活習慣を見直すきっかけを届ける健康意識啓発サイトです。">
     <meta name="twitter:image" content="https://gnipeli-byte.github.io/karadano-signal/images/ogp.jpg">
 
-    <link rel="icon" href="image/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=M+PLUS+Rounded+1c:wght@500;700;800;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=M+PLUS+Rounded+1c:wght@700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
     <link rel="stylesheet" href="index.css">
 </head>
 
@@ -111,7 +109,11 @@
         <section class="hero">
             <h2 class="u-visually-hidden">メインビジュアル</h2>
             <div class="hero__split">
-                <img src="./img/hero_care.jpg" class="hero__img" alt="腰痛の女性会社員の背中">
+                <picture class="optimized-picture hero__picture">
+                    <source srcset="./img/hero_care.webp" type="image/webp">
+                    <img src="./img/hero_care.jpg" class="hero__img" alt="腰痛の女性会社員の背中" width="800" height="596"
+                        loading="eager">
+                </picture>
                 <div class="hero__panel">
                     <p class="hero__catch" id="hero-catch">
                         小さな不調を放置していませんか？
@@ -124,10 +126,6 @@
             <div class="mission__blue">
 
                 <div class="mission__inner">
-                    <!-- <div class="mission__medal">
-                        <i class="fa-solid fa-wave-square mission__medal-icon" aria-hidden="true"></i>
-                        <span class="mission__medal-label">MISSION</span>
-                    </div> -->
                     <p class="mission__text">
                         <!-- <span class="mission__text-1st"><b class="mission__text-large1">その我慢が</b></span><br> -->
                         <span class="mission__text-2nd"><span class="mission__text-nowrap">日々の忙しさの中、</span><br>
@@ -153,7 +151,9 @@
                     <div class="mission__point">
 
                         <div class="mission__point-badge">
-                            <i class="fa-solid fa-wave-square"></i>
+                            <svg class="mission__point-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <polyline points="2 12 5 12 7.5 6 10.5 18 13 9 15.5 14 18 12 22 12"></polyline>
+                            </svg>
                             <span>MISSION</span>
                         </div>
 
@@ -196,7 +196,11 @@
 
                     <a href="profile1.html" class="profile__card-link">
                         <article class="profile__card">
-                            <img src="./img/symptom_katakori.jpg" alt="肩こり" class="profile__photo">
+                            <picture class="optimized-picture">
+                                <source srcset="./img/symptom_katakori.webp" type="image/webp">
+                                <img src="./img/symptom_katakori.jpg" alt="肩こり" class="profile__photo" width="800"
+                                    height="567" loading="lazy">
+                            </picture>
                             <h3 class="profile__name">
                                 <span class="profile__arrow">▶</span>肩こり
                                 <span class="profile__kana">（デスクワークに多い）</span>
@@ -210,7 +214,11 @@
 
                     <a href="profile2.html" class="profile__card-link">
                         <article class="profile__card">
-                            <img src="./img/symptom_youtsu.jpg" alt="腰痛" class="profile__photo">
+                            <picture class="optimized-picture">
+                                <source srcset="./img/symptom_youtsu.webp" type="image/webp">
+                                <img src="./img/symptom_youtsu.jpg" alt="腰痛" class="profile__photo" width="800"
+                                    height="568" loading="lazy">
+                            </picture>
                             <h3 class="profile__name">
                                 <span class="profile__arrow">▶</span>腰痛
                                 <span class="profile__kana">（立ち仕事・家事に多い）</span>
@@ -223,7 +231,11 @@
                     </a>
 
                     <article class="profile__card">
-                        <img src="./img/symptom_nekoze.jpg" alt="猫背・スマホ首" class="profile__photo">
+                        <picture class="optimized-picture">
+                            <source srcset="./img/symptom_nekoze.webp" type="image/webp">
+                            <img src="./img/symptom_nekoze.jpg" alt="猫背・スマホ首" class="profile__photo" width="800"
+                                height="636" loading="lazy">
+                        </picture>
                         <h3 class="profile__name">
                             <span class="profile__arrow">▶</span>猫背・スマホ首
                             <span class="profile__kana">（スマホ・PC操作に多い）</span>
@@ -234,7 +246,11 @@
                         </p>
                     </article>
                     <article class="profile__card">
-                        <img src="./img/symptom_zutsu.jpg" alt="慢性的な頭痛" class="profile__photo">
+                        <picture class="optimized-picture">
+                            <source srcset="./img/symptom_zutsu.webp" type="image/webp">
+                            <img src="./img/symptom_zutsu.jpg" alt="慢性的な頭痛" class="profile__photo" width="800"
+                                height="533" loading="lazy">
+                        </picture>
                         <h3 class="profile__name">
                             <span class="profile__arrow">▶</span>慢性的な頭痛
                             <span class="profile__kana">（見過ごされがち）</span>
@@ -245,7 +261,11 @@
                         </p>
                     </article>
                     <article class="profile__card">
-                        <img src="./img/symptom_hie.jpg" alt="冷え性・むくみ" class="profile__photo">
+                        <picture class="optimized-picture">
+                            <source srcset="./img/symptom_hie.webp" type="image/webp">
+                            <img src="./img/symptom_hie.jpg" alt="冷え性・むくみ" class="profile__photo" width="800"
+                                height="600" loading="lazy">
+                        </picture>
                         <h3 class="profile__name">
                             <span class="profile__arrow">▶</span>冷え性・むくみ
                             <span class="profile__kana">（季節を問わず）</span>
@@ -256,7 +276,11 @@
                         </p>
                     </article>
                     <article class="profile__card">
-                        <img src="./img/symptom_ganseihirou.jpg" alt="眼精疲労" class="profile__photo">
+                        <picture class="optimized-picture">
+                            <source srcset="./img/symptom_ganseihirou.webp" type="image/webp">
+                            <img src="./img/symptom_ganseihirou.jpg" alt="眼精疲労" class="profile__photo" width="800"
+                                height="599" loading="lazy">
+                        </picture>
                         <h3 class="profile__name">
                             <span class="profile__arrow">▶</span>眼精疲労
                             <span class="profile__kana">（画面作業に多い）</span>
@@ -288,60 +312,90 @@
 
                 <!-- <div class="video__4vids">
                     <div class="video__placeholder"> 
-                        <img src="./img/33266454_s.jpg" alt="バランスボールのエクササイズ動画（準備中）" class="video__placeholder-img">
+                        <picture class="optimized-picture">
+                            <source srcset="./img/33266454_s.webp" type="image/webp">
+                            <img src="./img/33266454_s.jpg" alt="バランスボールのエクササイズ動画（準備中）"
+                                class="video__placeholder-img" width="800" height="534" loading="lazy">
+                        </picture>
                         <p class="video__placeholder-text">動画は準備中です<br>近日公開予定</p>
                     </div>
 
                     <div class="video__placeholder"> 
-                        <img src="./img/35171468_s.jpg" alt="背骨、腰のセルフケア動画（準備中）" class="video__placeholder-img">
+                        <picture class="optimized-picture">
+                            <source srcset="./img/35171468_s.webp" type="image/webp">
+                            <img src="./img/35171468_s.jpg" alt="背骨、腰のセルフケア動画（準備中）"
+                                class="video__placeholder-img" width="800" height="532" loading="lazy">
+                        </picture>
                         <p class="video__placeholder-text">動画は準備中です<br>近日公開予定</p>
                     </div>
 
                     <div class="video__placeholder"> 
-                        <img src="./img/28095044_s.jpg" alt="自然の中でストレッチ（準備中）" class="video__placeholder-img">
+                        <picture class="optimized-picture">
+                            <source srcset="./img/28095044_s.webp" type="image/webp">
+                            <img src="./img/28095044_s.jpg" alt="自然の中でストレッチ（準備中）"
+                                class="video__placeholder-img" width="800" height="534" loading="lazy">
+                        </picture>
                         <p class="video__placeholder-text">動画は準備中です<br>近日公開予定</p>
                     </div>
 
                     <div class="video__placeholder"> 
-                        <img src="./img/28537325_s.jpg" alt="セルフケア動画（準備中）" class="video__placeholder-img">
+                        <picture class="optimized-picture">
+                            <source srcset="./img/28537325_s.webp" type="image/webp">
+                            <img src="./img/28537325_s.jpg" alt="セルフケア動画（準備中）" class="video__placeholder-img"
+                                width="800" height="532" loading="lazy">
+                        </picture>
                         <p class="video__placeholder-text">動画は準備中です<br>近日公開予定</p>
                     </div>
                 </div> -->
 
-                <div class="swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
+                <div class="video-slider" data-video-slider aria-label="セルフケア動画" aria-roledescription="carousel">
+                    <div class="video-slider__viewport">
+                        <div class="video-slider__track">
+                            <div class="video-slider__slide" role="group" aria-label="1 / 3">
 
-                            <div class="video__placeholder">
-                                <img src="./img/33266454_s.jpg" alt="バランスボールのエクササイズ動画（準備中）"
-                                    class="video__placeholder-img">
-                                <p class="video__placeholder-text">動画は準備中です<br>近日公開予定</p>
+                                <div class="video__placeholder">
+                                    <picture class="optimized-picture">
+                                        <source srcset="./img/33266454_s.webp" type="image/webp">
+                                        <img src="./img/33266454_s.jpg" alt="バランスボールのエクササイズ動画（準備中）"
+                                            class="video__placeholder-img" width="800" height="534" loading="lazy">
+                                    </picture>
+                                    <p class="video__placeholder-text">動画は準備中です<br>近日公開予定</p>
+                                </div>
+
                             </div>
+                            <div class="video-slider__slide" role="group" aria-label="2 / 3">
 
-                        </div>
-                        <div class="swiper-slide">
+                                <div class="video__placeholder">
+                                    <picture class="optimized-picture">
+                                        <source srcset="./img/35171468_s.webp" type="image/webp">
+                                        <img src="./img/35171468_s.jpg" alt="背骨、腰のセルフケア動画（準備中）"
+                                            class="video__placeholder-img" width="800" height="532" loading="lazy">
+                                    </picture>
+                                    <p class="video__placeholder-text">動画は準備中です<br>近日公開予定</p>
+                                </div>
 
-                            <div class="video__placeholder">
-                                <img src="./img/35171468_s.jpg" alt="背骨、腰のセルフケア動画（準備中）" class="video__placeholder-img">
-                                <p class="video__placeholder-text">動画は準備中です<br>近日公開予定</p>
                             </div>
+                            <div class="video-slider__slide" role="group" aria-label="3 / 3">
 
-                        </div>
-                        <div class="swiper-slide">
+                                <div class="video__placeholder">
+                                    <picture class="optimized-picture">
+                                        <source srcset="./img/28095044_s.webp" type="image/webp">
+                                        <img src="./img/28095044_s.jpg" alt="自然の中でストレッチ（準備中）"
+                                            class="video__placeholder-img" width="800" height="534" loading="lazy">
+                                    </picture>
+                                    <p class="video__placeholder-text">動画は準備中です<br>近日公開予定</p>
+                                </div>
 
-                            <div class="video__placeholder">
-                                <img src="./img/28095044_s.jpg" alt="自然の中でストレッチ（準備中）" class="video__placeholder-img">
-                                <p class="video__placeholder-text">動画は準備中です<br>近日公開予定</p>
                             </div>
-
                         </div>
 
+                        <button class="video-slider__button video-slider__button--prev" type="button"
+                            aria-label="前のスライド"></button>
+                        <button class="video-slider__button video-slider__button--next" type="button"
+                            aria-label="次のスライド"></button>
                     </div>
 
-                    <div class="swiper-pagination"></div>
-
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    <div class="video-slider__pagination" aria-label="スライドを選択"></div>
                 </div>
 
                 <!-- <p class="video__caption">
@@ -366,7 +420,11 @@
                     <a href="topics1.html" class="topics__card-link">
                         <article class="topics__card">
                             <div class="topics__photowrap">
-                                <img src="./img/column_taigen.jpg" alt="デスクで疲れを感じる人" class="topics__photo">
+                                <picture class="optimized-picture">
+                                    <source srcset="./img/column_taigen.webp" type="image/webp">
+                                    <img src="./img/column_taigen.jpg" alt="デスクで疲れを感じる人" class="topics__photo"
+                                        width="800" height="533" loading="lazy">
+                                </picture>
                             </div>
                             <h3 class="topics__caption">
                                 なぜ疲れは腰や肩に出やすいのか？
@@ -377,7 +435,11 @@
                     <a href="topics2.html" class="topics__card-link">
                         <article class="topics__card">
                             <div class="topics__photowrap">
-                                <img src="./img/column_selfcare.jpg" alt="ストレッチをする様子" class="topics__photo">
+                                <picture class="optimized-picture">
+                                    <source srcset="./img/column_selfcare.webp" type="image/webp">
+                                    <img src="./img/column_selfcare.jpg" alt="ストレッチをする様子" class="topics__photo"
+                                        width="800" height="808" loading="lazy">
+                                </picture>
                             </div>
                             <h3 class="topics__caption">
                                 セルフケアと整体、
@@ -389,7 +451,11 @@
                     <article class="topics__card">
                         <div class="topics__photowrap">
                             <span class="topics__new">NEW</span>
-                            <img src="./img/column_hie.jpg" alt="冷え対策の様子" class="topics__photo">
+                            <picture class="optimized-picture">
+                                <source srcset="./img/column_hie.webp" type="image/webp">
+                                <img src="./img/column_hie.jpg" alt="冷え対策の様子" class="topics__photo" width="800"
+                                    height="534" loading="lazy">
+                            </picture>
                         </div>
                         <h3 class="topics__caption">
                             からだを冷やさない
@@ -446,7 +512,9 @@
 
         <div class="pagetop-wrap">
             <a href="#top" class="pagetop" aria-label="ページトップへ">
-                <i class="fa-solid fa-arrow-up"></i>
+                <svg class="pagetop__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M12 19V5M6.5 10.5 12 5l5.5 5.5"></path>
+                </svg>
             </a>
         </div>
     </main>
@@ -612,72 +680,155 @@
     </script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-    <script>
-        AOS.init();
-    </script>
 
-    <!-- swiperのスライダー -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" defer></script>
     <script>
-        const swiper = new Swiper('.swiper', {
-            loop: true,
-            slidesPerView: 1, // デフォルト(スマホ幅)は1枚ずつ表示
-            slidesPerGroup: 1, // 送る枚数は常に1枚ずつ
-            spaceBetween: 20,
-            speed: 600, // スライドが切り替わる時のアニメーション速度(ミリ秒)
-            autoplay: {
-                delay: 3000, // 3秒ごとに自動で次のスライドへ
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true, // マウスを乗せている間は一時停止
-            },
-            allowTouchMove: true, // ドラッグ/スワイプでの手動送りを有効化
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                // 769px以上(サイト全体のブレークポイントと統一)で2枚同時表示に
-                769: {
-                    slidesPerView: 2,
-                    spaceBetween: 28,
+        (function initVideoSlider() {
+            const slider = document.querySelector('[data-video-slider]');
+            if (!slider) return;
+
+            const viewport = slider.querySelector('.video-slider__viewport');
+            const track = slider.querySelector('.video-slider__track');
+            const slides = Array.from(slider.querySelectorAll('.video-slider__slide'));
+            const prevButton = slider.querySelector('.video-slider__button--prev');
+            const nextButton = slider.querySelector('.video-slider__button--next');
+            const pagination = slider.querySelector('.video-slider__pagination');
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const desktopQuery = window.matchMedia('(min-width: 769px)');
+            let currentIndex = 0;
+            let autoplayTimer = null;
+            let pointerStartX = null;
+            let resizeFrame = null;
+
+            const visibleSlides = function () {
+                return desktopQuery.matches ? Math.min(2, slides.length) : 1;
+            };
+
+            const maxIndex = function () {
+                return Math.max(0, slides.length - visibleSlides());
+            };
+
+            const update = function (animate) {
+                currentIndex = Math.min(currentIndex, maxIndex());
+                track.classList.toggle('is-static', animate === false);
+                const offset = slides[currentIndex].offsetLeft - slides[0].offsetLeft;
+                track.style.transform = 'translate3d(' + (-offset) + 'px, 0, 0)';
+
+                slides.forEach(function (slide, index) {
+                    const isVisible = index >= currentIndex && index < currentIndex + visibleSlides();
+                    slide.setAttribute('aria-hidden', String(!isVisible));
+                });
+
+                pagination.querySelectorAll('button').forEach(function (dot, index) {
+                    const isActive = index === currentIndex;
+                    dot.classList.toggle('is-active', isActive);
+                    dot.setAttribute('aria-current', isActive ? 'true' : 'false');
+                });
+
+                if (animate === false) {
+                    requestAnimationFrame(function () {
+                        track.classList.remove('is-static');
+                    });
                 }
-            },
-        });
-    </script>
+            };
 
-    <script>
-        // 外部ファイル（defer）がすべて読み込まれ、実行可能になったら初期化
+            const buildPagination = function () {
+                pagination.textContent = '';
+                for (let index = 0; index <= maxIndex(); index++) {
+                    const dot = document.createElement('button');
+                    dot.type = 'button';
+                    dot.className = 'video-slider__dot';
+                    dot.setAttribute('aria-label', (index + 1) + '番目のスライドを表示');
+                    dot.addEventListener('click', function () {
+                        goTo(index);
+                        restartAutoplay();
+                    });
+                    pagination.appendChild(dot);
+                }
+            };
+
+            const goTo = function (index) {
+                const lastIndex = maxIndex();
+                currentIndex = index > lastIndex ? 0 : index < 0 ? lastIndex : index;
+                update(true);
+            };
+
+            const stopAutoplay = function () {
+                if (autoplayTimer !== null) {
+                    window.clearInterval(autoplayTimer);
+                    autoplayTimer = null;
+                }
+            };
+
+            const startAutoplay = function () {
+                stopAutoplay();
+                if (reduceMotion || maxIndex() === 0 || document.hidden) return;
+                autoplayTimer = window.setInterval(function () {
+                    goTo(currentIndex + 1);
+                }, 3000);
+            };
+
+            const restartAutoplay = function () {
+                stopAutoplay();
+                startAutoplay();
+            };
+
+            prevButton.addEventListener('click', function () {
+                goTo(currentIndex - 1);
+                restartAutoplay();
+            });
+
+            nextButton.addEventListener('click', function () {
+                goTo(currentIndex + 1);
+                restartAutoplay();
+            });
+
+            viewport.addEventListener('pointerdown', function (event) {
+                pointerStartX = event.clientX;
+            });
+
+            viewport.addEventListener('pointerup', function (event) {
+                if (pointerStartX === null) return;
+                const distance = event.clientX - pointerStartX;
+                pointerStartX = null;
+                if (Math.abs(distance) < 40) return;
+                goTo(currentIndex + (distance < 0 ? 1 : -1));
+                restartAutoplay();
+            });
+
+            viewport.addEventListener('pointercancel', function () {
+                pointerStartX = null;
+            });
+
+            slider.addEventListener('mouseenter', stopAutoplay);
+            slider.addEventListener('mouseleave', startAutoplay);
+            slider.addEventListener('focusin', stopAutoplay);
+            slider.addEventListener('focusout', function (event) {
+                if (!slider.contains(event.relatedTarget)) startAutoplay();
+            });
+
+            document.addEventListener('visibilitychange', function () {
+                if (document.hidden) stopAutoplay();
+                else startAutoplay();
+            });
+
+            window.addEventListener('resize', function () {
+                if (resizeFrame !== null) cancelAnimationFrame(resizeFrame);
+                resizeFrame = requestAnimationFrame(function () {
+                    buildPagination();
+                    update(false);
+                    startAutoplay();
+                    resizeFrame = null;
+                });
+            }, { passive: true });
+
+            buildPagination();
+            update(false);
+            startAutoplay();
+        })();
+
         window.addEventListener('DOMContentLoaded', function () {
-            // AOSの初期化
             if (typeof AOS !== 'undefined') {
                 AOS.init();
-            }
-
-            // Swiperの初期化
-            if (typeof Swiper !== 'undefined') {
-                const swiper = new Swiper('.swiper', {
-                    loop: true,
-                    slidesPerView: 1,
-                    slidesPerGroup: 1,
-                    spaceBetween: 20,
-                    speed: 600,
-                    autoplay: {
-                        delay: 3000,
-                        disableOnInteraction: false,
-                        pauseOnMouseEnter: true,
-                    },
-                    allowTouchMove: true,
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                    },
-                    breakpoints: {
-                        769: {
-                            slidesPerView: 2,
-                            spaceBetween: 28,
-                        }
-                    },
-                });
             }
         });
     </script>
